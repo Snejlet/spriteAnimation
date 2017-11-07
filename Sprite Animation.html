@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animation</title>
+</head>
+<body>
+
+<canvas id="board" width="800" height="500"></canvas>
+
+<script src="wolfSprite.js"></script>
+
+<script>
+
+
+
+    function drawCanvas() {
+
+        var canvas = document.getElementById("board");
+        var ctx = canvas.getContext("2d");
+
+        wolf.draw(ctx);
+    }
+
+    function tickAll() {
+
+        var canvas = document.getElementById("board");
+
+        wolf.tick(canvas);
+
+        drawCanvas();
+    }
+
+    setInterval(tickAll,1000/60);
+
+</script>
+
+</body>
+</html>
